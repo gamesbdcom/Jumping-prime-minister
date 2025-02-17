@@ -1,0 +1,79 @@
+body {
+    text-align: center;
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #e6f7ff;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+}
+
+.game-container {
+    position: relative;
+    width: 500px;
+    height: 250px;
+    margin: 20px auto;
+    background-color: #87ceeb;
+    overflow: hidden;
+    border: 3px solid #333;
+    border-radius: 10px;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+
+#background-move {
+    position: absolute;
+    width: 1500px;
+    height: 250px;
+    background: url('background.png') repeat-x;
+    animation: moveBackground 4s linear infinite;
+}
+
+#boy {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    background: url('boy.png') no-repeat center;
+    background-size: cover;
+    transition: bottom 0.3s;
+}
+
+#obstacle {
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+    width: 40px;
+    height: 40px;
+    background: url('rock.png') no-repeat center;
+    background-size: cover;
+    animation: moveObstacle 2s infinite linear;
+}
+
+@keyframes moveObstacle {
+    from { right: -50px; }
+    to { right: 500px; }
+}
+
+@keyframes moveBackground {
+    from { left: 0; }
+    to { left: -1000px; }
+}
+
+.jump {
+    bottom: 100px !important;
+}
+
+p {
+    font-size: 18px;
+    color: #333;
+}
+
+#score {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4caf50;
+}
